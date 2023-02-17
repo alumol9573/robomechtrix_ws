@@ -12,8 +12,16 @@
     <material>Gazebo/Green</material>
   </gazebo>
 
-  <gazebo reference="camera">
+  <gazebo reference="left_camera">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="right_camera">
     <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="rear_camera">
+    <material>Gazebo/Yellow</material>
   </gazebo>
 
   <gazebo reference="chassis">
@@ -27,10 +35,29 @@
     <child link="chassis" />
   </joint>
 
-  <joint name="camera_joint" type="fixed">
-    <origin xyz="0.26 0 0" rpy="0 0 0" />
+  <!-- Cámara delantera -->
+  <joint name="left_camera_joint" type="fixed">
+    <!-- <origin xyz="0.26 0 0" rpy="0 0 0" /> -->
+    <origin xyz="0.24 0.100 0" rpy="0 0 0" />
     <parent link="chassis"/>
-    <child link="camera" />  
+    <child link="left_camera" />  
+    <axis xyz="0 1 0"/> 
+  </joint>
+
+  <!-- Cámara derecha -->
+  <joint name="right_camera_joint" type="fixed">
+   <!-- <origin xyz="0.26 0.26 0" rpy="0 0 0" /> -->
+   <origin xyz="0.24 -0.100 0" rpy="0 0 0" />
+    <parent link="chassis"/>
+    <child link="right_camera" />  
+    <axis xyz="0 1 0"/> 
+  </joint>
+
+  <!-- Cámara trasera -->
+  <joint name="rear_camera_joint" type="fixed">
+   <origin xyz="-0.24 0 0" rpy="0 0 3.1416" />
+    <parent link="chassis"/>
+    <child link="rear_camera" />  
     <axis xyz="0 1 0"/> 
   </joint>
 
@@ -58,7 +85,65 @@
     <limit effort="10000" velocity="1000" />
     <dynamics damping="1.0" friction="1.0" />
   </joint>
-<link name="camera">
+
+  <!-- Cámara izquierda -->
+  <link name="left_camera">
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia
+        ixx="1e-6" ixy="0.0" ixz="0.0"
+        iyy="1e-6" iyz="0.0"
+        izz="1e-6"
+      />
+    </inertial>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+  <!-- Cámara derecha -->
+  <link name="right_camera">
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia
+        ixx="1e-6" ixy="0.0" ixz="0.0"
+        iyy="1e-6" iyz="0.0"
+        izz="1e-6"
+      />
+    </inertial>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </visual>
+
+  </link>
+ 
+  <!-- Cámara trasera -->
+  <link name="rear_camera">
     <inertial>
       <mass value="0.1"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
