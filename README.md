@@ -1,3 +1,10 @@
+# URDF-4
+En esta rama se ha modificado el robot de la rama 3 añadiéndole dos cámaras.
+Dos de las cámaras están situadas simétricamente en el frontal del robot a
+modo de ojos, y la tercera está situada detrás alineada con el eje x.
+
+![Captura](Robomechtrix-4.png)
+
 # robomechtrix_ws
 Robomechtrix Workspace For ROS
 
