@@ -46,9 +46,9 @@
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
         <cameraName>left_camera</cameraName>
-        <imageTopicName>rgb/left_image_raw</imageTopicName>
+        <imageTopicName>rgb/image_raw</imageTopicName>
         <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
-        <frameName>camera</frameName>
+        <frameName>left_camera</frameName>
         <hackBaseline>0.07</hackBaseline>
         <distortionK1>0.0</distortionK1>
         <distortionK2>0.0</distortionK2>
@@ -81,7 +81,7 @@
         <cameraName>right_camera</cameraName>
         <imageTopicName>rgb/right_image_raw</imageTopicName>
         <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
-        <frameName>camera</frameName>
+        <frameName>right_camera</frameName>
         <hackBaseline>0.07</hackBaseline>
         <distortionK1>0.0</distortionK1>
         <distortionK2>0.0</distortionK2>
@@ -114,7 +114,7 @@
         <cameraName>rear_camera</cameraName>
         <imageTopicName>rgb/rear_image_raw</imageTopicName>
         <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
-        <frameName>camera</frameName>
+        <frameName>rear_camera</frameName>
         <hackBaseline>0.07</hackBaseline>
         <distortionK1>0.0</distortionK1>
         <distortionK2>0.0</distortionK2>
@@ -124,7 +124,6 @@
       </plugin>
     </sensor>
   </gazebo>
-
 
   <!-- hokuyo -->
   <gazebo reference="hokuyo">
